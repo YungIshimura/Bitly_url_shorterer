@@ -2,12 +2,9 @@ import os
 import requests
 from urllib.parse import urlparse
 from dotenv import load_dotenv
-load_dotenv()
 import argparse
 import sys
 
-
-API_KEY = os.getenv("BITLY_API_KEY")
 
 def add_link():
     parser = argparse.ArgumentParser()
@@ -57,6 +54,8 @@ def count_clicks(api_key, user_link):
 
 
 if __name__ == "__main__":
+    load_dotenv()
+    API_KEY = os.getenv("BITLY_API_KEY")
     parser = add_link()
     namespace = parser.parse_args(sys.argv[1:])
     for user_link in namespace.user_link:
