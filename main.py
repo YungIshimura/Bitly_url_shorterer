@@ -7,7 +7,10 @@ import sys
 
 
 def add_link():
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description = """ 
+    Программа для сокращения URL (битлинка) и получения количества переходов по битлинку. 
+    Программа взаимодействует с сервисом Bitly.org через API-ключ. При вводе обычной ссылки вы получаете битлинк, при вводе же битлинка получаете количество переходов по нему.
+    """ )
     parser.add_argument('user_link', nargs = '+')
 
     return parser
