@@ -12,7 +12,7 @@ def configure_parser():
     При вводе обычной ссылки вы получаете битлинк. 
     При вводе же битлинка получаете количество переходов по нему.
     """)
-    parser.add_argument("user_link", nargs="+")
+    parser.add_argument("user_link", nargs="+", help = "Cсылка для сокращения или битлинк")
 
     return parser
 
