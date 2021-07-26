@@ -6,7 +6,7 @@ import argparse
 import sys
 
 
-def configure_parser_arguments():
+def configure_parser():
     parser = argparse.ArgumentParser(description=""" 
     Программа для сокращения URL (битлинка) и получения количества переходов по битлинку. 
     Программа взаимодействует с сервисом Bitly.org через API-ключ. 
