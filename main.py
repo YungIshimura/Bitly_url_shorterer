@@ -61,9 +61,9 @@ def count_clicks(api_key, user_link):
 if __name__ == "__main__":
     load_dotenv()
     API_KEY = os.getenv("BITLY_API_KEY")
-    parser = setting_parser_arguments()
-    namespace = parser.parse_args(sys.argv[1:])
-    for user_link in namespace.user_link:
+    parser = configure_parser()
+    args= parser.parse_args(sys.argv[1:])
+    for user_link in args.user_link:
         check = check_link(API_KEY, user_link)
         try:
             if not check:
