@@ -3,7 +3,6 @@ import requests
 from urllib.parse import urlparse
 from dotenv import load_dotenv
 import argparse
-import sys
 
 
 def configure_parser():
@@ -62,7 +61,7 @@ if __name__ == "__main__":
     load_dotenv()
     API_KEY = os.getenv("BITLY_API_KEY")
     parser = configure_parser()
-    args= parser.parse_args(sys.argv[1:])
+    args= parser.parse_args()
     for user_link in args.user_link:
         check = check_link(API_KEY, user_link)
         try:
