@@ -61,7 +61,7 @@ if __name__ == "__main__":
     load_dotenv()
     api_key = os.getenv("BITLY_API_KEY")
     parser = configure_parser()
-    args= parser.parse_args()
+    args = parser.parse_args()
     for user_link in args.user_link:
         check = check_link(api_key, user_link)
         try:
