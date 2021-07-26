@@ -59,15 +59,15 @@ def count_clicks(api_key, user_link):
 
 if __name__ == "__main__":
     load_dotenv()
-    API_KEY = os.getenv("BITLY_API_KEY")
+    api_key = os.getenv("BITLY_API_KEY")
     parser = configure_parser()
     args= parser.parse_args()
     for user_link in args.user_link:
-        check = check_link(API_KEY, user_link)
+        check = check_link(api_key, user_link)
         try:
             if not check:
-                print("Битлинк: ", shorten_link(API_KEY, user_link))
+                print("Битлинк: ", shorten_link(api_key, user_link))
             else:
-                print(f"По вашей ссылке прошли: {count_clicks(API_KEY, user_link)} раз (а)")
+                print(f"По вашей ссылке прошли: {count_clicks(api_key, user_link)} раз (а)")
         except requests.exceptions.HTTPError:
                 print("Ссылка введена неверно ")
